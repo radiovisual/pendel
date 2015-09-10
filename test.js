@@ -19,15 +19,6 @@ describe('pendel', function(){
         done();
     });
 
-    //
-    //it ('should get the time difference between two timestrings', function(done){
-    //
-    //    assert.equal( duration('1:00AM', '2:00AM').hours, 1);
-    //    assert.equal( duration('1:00AM', '2:01AM').minutes, 61);
-    //    assert.equal( duration('1:00:00 AM', '1:00:01 AM').seconds, 1);
-    //    done();
-    //});
-
 
     it('should get the time difference between two timestrings', function(done){
 
