@@ -1,4 +1,4 @@
-# pendel
+# pendel [![Build Status](https://travis-ci.org/radiovisual/pendel.svg)](https://travis-ci.org/radiovisual/pendel)
 
 > Get the time difference between two datetime strings
 
