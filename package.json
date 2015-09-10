@@ -1,0 +1,39 @@
+{
+  "name": "pendel",
+  "version": "1.0.0",
+  "description": "Get the time difference between two datetime strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radiovisual/pendel.git"
+  },
+  "keywords": [
+    "time",
+    "difference",
+    "count",
+    "timer",
+    "pendulum",
+    "pendel",
+    "long",
+    "seconds",
+    "minutes",
+    "hours",
+    "last",
+    "duration"
+  ],
+  "author": "Michael Wuergler <senjudev@gmail.com> (http://numetriclabs.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radiovisual/pendel/issues"
+  },
+  "homepage": "https://github.com/radiovisual/pendel#readme",
+  "devDependencies": {
+    "mocha": "^2.3.2"
+  },
+  "dependencies": {
+    "twelve-to-twentyfour": "^0.1.1"
+  }
+}
