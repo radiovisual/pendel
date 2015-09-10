@@ -28,6 +28,9 @@ duration('8:00PM', '9:30PM').totalMinutes;
 duration('1:00AM', '3:30AM').totalMinutes;
 // => 150
 
+duration('00:00:00', '00:00:10').totalSeconds;
+// => 10
+
 ```
 
 ## API
@@ -56,10 +59,13 @@ Type: `string`
 
 - `1:00 AM`
 - `1:00AM`
+- `1:00:00 AM`
+- `1:00:00AM`
 
-24-hour format:
+24-hour formats:
 
 - `00:00`
+- `00:00:00`
 
 
 ## License
