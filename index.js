@@ -8,8 +8,8 @@ module.exports = function(timestr1, timestr2){
         throw new Error('Invalid parameters passed to pendel');
     }
 
-    var time1 = to24(timestr1);
-    var time2 = to24(timestr2);
+    var time1 = twentyfour(timestr1);
+    var time2 = twentyfour(timestr2);
 
     if (!time1 || !time2){
         throw new Error("Invalid times sent to pendel");
@@ -18,33 +18,26 @@ module.exports = function(timestr1, timestr2){
     time1 = time1.split(':').map(function(n){ return parseInt(n, 10); });
     time2 = time2.split(':').map(function(n){ return parseInt(n, 10); });
 
-    //console.log("using", time1, time2);
+    // force the seconds onto times that don't have them.
+    if (time1.length === 2){ time1[2] = 0; }
+    if (time2.length === 2){ time2[2] = 0; }
+
+    // put the largest number first
+    var totalSeconds1 = time1[0]*60*60 + time1[1]*60 + time1[2];
+    var totalSeconds2 = time2[0]*60*60 + time2[1]*60 + time2[2];
 
     var results = {};
 
-    results.totalMinutes = Math.abs((((time1[0]*60)+time1[1])-((time2[0]*60)+time2[1])));
-    results.hours = Math.floor(results.totalMinutes/60);
-    results.minutes = results.totalMinutes%60;
-    results.totalSeconds = results.totalMinutes*60;
+    if (totalSeconds1 > totalSeconds2){
+        results.totalSeconds = totalSeconds1 - totalSeconds2;
+    } else {
+        results.totalSeconds = totalSeconds2 - totalSeconds1;
+    }
+
+    results.hours = Math.floor(results.totalSeconds/60/60);
+    results.minutes = Math.floor((results.totalSeconds/60)%60);
+    results.seconds = Math.floor(results.totalSeconds%60);
+    results.totalMinutes = results.hours*60 + results.minutes;
 
     return results;
 };
-
-
-function to24(str){
-
-    // check if its already a 24-hour string
-    var reg24 = /^[0-9]{2}:[0-9]{2}$/;
-    if(reg24.test(str)){
-        return str;
-    }
-
-    // check if its a 12-hour string
-    var reg12 = /^[0-9]{1,2}:[0-9]{2}\s?(AM|PM)$/i;
-    if(reg12.test(str)){
-        return twentyfour(str);
-    }
-
-    return null;
-
-}
