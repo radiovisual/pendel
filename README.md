@@ -17,10 +17,10 @@ $ npm install pendel
 var duration = require('pendel');
 
 duration('1:00AM', '3:30AM');
-// => { hours:3, minutes:30, totalSeconds:1100, totalMinutes:210 }
+// => { hours:3, minutes:30, seconds:0, totalSeconds:1100, totalMinutes:210 }
 
 duration('15:00', '16:00');
-// => { hours:1, minutes:0, totalSeconds:3600, totalMinutes:60 }
+// => { hours:1, minutes:0, seconds:0, totalSeconds:3600, totalMinutes:60 }
 
 duration('8:00PM', '9:30PM').totalMinutes;
 // => 90
