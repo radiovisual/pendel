@@ -20,8 +20,8 @@ duration('1:00AM', '3:30AM');
 duration('15:00', '16:00');
 // => { hours:1, minutes:0, totalSeconds:3600, totalMinutes:60 }
 
-duration('4:00PM', '6:30PM').totalMinutes;
-// => 150
+duration('8:00PM', '9:30PM').totalMinutes;
+// => 90
 
 duration('1:00AM', '3:30AM').totalMinutes;
 // => 150

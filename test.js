@@ -30,6 +30,7 @@ describe('pendel', function(){
         assert.equal( duration('00:00', '23:59').minutes, 59);
         assert.equal( duration('12:00AM', '00:00').minutes, 0);
         assert.equal( duration('12:00AM', '00:12').minutes, 12);
+        assert.equal( duration('8:00PM', '9:30PM').totalMinutes, 90);
         done();
 
     });
