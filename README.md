@@ -4,6 +4,8 @@
 
 **[Pendel](https://de.wikipedia.org/wiki/Pendel):** German word for pendulum. 
 
+:zap: **Important Note:** Version 1.0.0 of this module only supports time strings. *Support for calendar dates coming soon.*
+
 ## Install
 ```sh
 $ npm install pendel
