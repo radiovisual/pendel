@@ -35,19 +35,19 @@ duration('00:00:00', '00:00:10').totalSeconds;
 
 ## API
 
-###pendel(timestr1, timestr2)
+### pendel(timestr1, timestr2)
 
 Get the time difference between `timestr1` and `timestr2`
 
 Returns: `object`
 
-####timestr1
+#### timestr1
 
 *Required*
 
 Type: `string`
 
-####timestr2
+#### timestr2
 
 *Required*
 
