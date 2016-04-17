@@ -1,6 +1,6 @@
 {
   "name": "pendel",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Get the time difference between two date strings or two time strings.",
   "main": "index.js",
   "scripts": {

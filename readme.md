@@ -12,6 +12,7 @@ and a `pendel.date()` function has been added. Please see the API notes below fo
 
 
 ## Install
+
 ```
 $ npm install --save pendel
 ```
@@ -58,17 +59,19 @@ Get the time difference between `startTime` and `endTime`
 Returns an `object` with the following time properties:
 
 Property | Description
---- | --- |
+:--- | :---
 `hours` | The difference in hours
 `minutes` | The difference in minutes
 `seconds` | The difference in seconds
 `totalSeconds` | The total elapsed time in seconds
 `totalMinutes` | The total elapsed time in minutes
 
+
 #### startTime
 
 *Required*  
 Type: `string`
+
 
 #### endTime
 
@@ -89,6 +92,7 @@ Type: `string`
 - `00:00`
 - `00:00:00`
 
+
 ### `pendel.date(startDate, endDate)`
 
 Get the elapsed (delta) time between startDate and endDate
@@ -96,7 +100,7 @@ Get the elapsed (delta) time between startDate and endDate
 Returns an `object` with the following Date properties:
 
 Property | Description
---- | --- |
+:--- | :---
 `years` | The difference in years
 `months` | The difference in months
 `weeks` | The difference in weeks
@@ -105,12 +109,14 @@ Property | Description
 `minutes` | The total elapsed time in minutes
 `seconds` | The total elapsed time in seconds
 
+
 #### startDate
 
 *Required*  
 Type: `datestring|Date`
 
 The datestring or `Date` object you want to use as the start date.
+
 
 #### endDate
 
