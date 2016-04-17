@@ -1,13 +1,15 @@
 # pendel [![Build Status](https://travis-ci.org/radiovisual/pendel.svg)](https://travis-ci.org/radiovisual/pendel)
 
-> Get the time difference between two date or time strings
+> Get the time difference between two date strings or two time strings.
 
 **[Pendel](https://de.wikipedia.org/wiki/Pendel):** German word for pendulum. 
 
 ## v2.0
 
 Version 2.0 introduces support for getting the difference in `Date` objects or date strings, which introduces some
-breaking changes to the API.
+breaking changes to the API. Namely, you now need to use `pendel.time()` to get the difference between two timestrings
+and a `pendel.date()` function has been added. Please see the API notes below for more information. 
+
 
 ## Install
 ```
@@ -53,7 +55,15 @@ duration.date('01/01/01', '01/03/02');
 
 Get the time difference between `startTime` and `endTime`
 
-Returns: An `object` with the following Number values: `hours`, `minutes`, `seconds`, `totalSeconds` and `totalMinutes`
+Returns an `object` with the following time properties:
+
+Property | Description
+--- | --- |
+`hours` | The difference in hours
+`minutes` | The difference in minutes
+`seconds` | The difference in seconds
+`totalSeconds` | The total elapsed time in seconds
+`totalMinutes` | The total elapsed time in minutes
 
 #### startTime
 
@@ -81,9 +91,19 @@ Type: `string`
 
 ### `pendel.date(startDate, endDate)`
 
-Get the elapsed (delta) time between date1 and date2
+Get the elapsed (delta) time between startDate and endDate
 
-Returns: An `object` with the following Number values: `years`, `months`, `weeks`, `days`, `hours`, `minutes` and `seconds`
+Returns an `object` with the following Date properties:
+
+Property | Description
+--- | --- |
+`years` | The difference in years
+`months` | The difference in months
+`weeks` | The difference in weeks
+`days` | The total elapsed time in days
+`hours` | The total elapsed time in hours
+`minutes` | The total elapsed time in minutes
+`seconds` | The total elapsed time in seconds
 
 #### startDate
 
