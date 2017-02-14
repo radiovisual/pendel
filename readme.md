@@ -23,16 +23,16 @@ $ npm install --save pendel
 const duration = require('pendel');
 
 // Difference in CLOCK TIMES via pendel.time()
-duration.time('2:00PM', '3:30PM');
-duration.time('14:00', '15:30');
-duration.time('Mon Jan 01 2001 14:00:00 GMT+0000 (WET)', 'Mon Jan 01 2001 15:30:00 GMT+0000 (WET)');
+duration.time('2:00PM', '5:30PM');
+duration.time('14:00', '17:30');
+duration.time('Mon Jan 01 2001 14:00:00 GMT+0000 (WET)', 'Mon Jan 01 2001 17:30:00 GMT+0000 (WET)');
 /*
   {
-    hours:3,
-    minutes:30,
-    seconds:0,
-    totalSeconds:1100,
-    totalMinutes:210
+    hours: 3,
+    minutes: 30,
+    seconds: 0,
+    totalSeconds: 12600,
+    totalMinutes: 210
   }
 */
 

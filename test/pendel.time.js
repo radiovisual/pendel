@@ -65,3 +65,20 @@ test('should accept TMZ Datetime strings', t => {
 	t.is(diff.totalMinutes, 24 * 60);
 	t.is(diff.totalSeconds, (24 * 60 * 60) + 1);
 });
+
+test('readme examples should pass', t => {
+	const expected = {
+		hours: 3,
+		minutes: 30,
+		seconds: 0,
+		totalSeconds: 12600,
+		totalMinutes: 210
+	};
+	const example1 = duration.time('2:00PM', '5:30PM');
+	const example2 = duration.time('14:00', '17:30');
+	const example3 = duration.time('Mon Jan 01 2001 14:00:00 GMT+0000 (WET)', 'Mon Jan 01 2001 17:30:00 GMT+0000 (WET)');
+
+	t.deepEqual(example1, expected);
+	t.deepEqual(example2, expected);
+	t.deepEqual(example3, expected);
+});
