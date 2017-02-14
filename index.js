@@ -5,7 +5,7 @@ var twelveTwentyfour = require('twelve-to-twentyfour');
 require('moment-range');
 
 /**
- * Get the time diffrence between two timestrings.
+ * Get the time difference between two timestrings.
  *
  * @param {string} timestr1 - a time string.
  * @param {string} timestr2 - a time string.
@@ -45,8 +45,7 @@ function getTimeDifference(timestr1, timestr2) {
 }
 
 /**
- * Get the time diffrence between two datestrings.
- * Example: '1:32PM' => 'Mon Feb 13 2017 13:32 GMT+0000 (WET)'
+ * Get the time difference between two datestrings.
  *
  * @param {string} timestr1 - a date string.
  * @param {string} timestr2 - a date string.
@@ -108,8 +107,8 @@ function twentyFourHourTimeToDateString(time) {
 }
 
 /**
- * Place a clocktime into a generic datetime string.
- * Example: '1:32PM' => 'Mon Feb 13 2017 13:32 GMT+0000 (WET)'
+ * Get total elapsed seconds, minutes and hours between
+ * two epoch times.
  *
  * @param {number} epoch1 - an epoch time.
  * @param {number} epoch2 - an epoch time.
@@ -126,6 +125,9 @@ function getTotalResultsFromEpochs(epoch1, epoch2) {
 	};
 }
 
+/**
+ * Export the API.
+ */
 module.exports = {
 	time: getTimeDifference,
 	date: getDateDifference
