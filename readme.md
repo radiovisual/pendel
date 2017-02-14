@@ -2,14 +2,13 @@
 
 > Get the time difference between two date strings or two time strings.
 
-**[Pendel](https://de.wikipedia.org/wiki/Pendel):** German word for pendulum. 
+**[Pendel](https://de.wikipedia.org/wiki/Pendel):** German word for pendulum.
 
-## v2.0
+## v3.0
 
-Version 2.0 introduces support for getting the difference in `Date` objects or date strings, which introduces some
-breaking changes to the API. Namely, you now need to use `pendel.time()` to get the difference between two timestrings
-and a `pendel.date()` function has been added. Please see the API notes below for more information. 
-
+Version 3.0 allows you to pass in fully-qualified datetime strings to both
+`pendel.date()` and `pendel.time()`. Per the v2.0 API, you can still pass in 12-hour
+and 24-hour clocktime strings to `pendel.time()`.
 
 ## Install
 
@@ -23,10 +22,12 @@ $ npm install --save pendel
 ```js
 const duration = require('pendel');
 
-// Difference in CLOCK TIMES
-duration.time('1:00AM', '3:30AM');
-/* 
-  { 
+// Difference in CLOCK TIMES via pendel.time()
+duration.time('2:00PM', '3:30PM');
+duration.time('14:00', '15:30');
+duration.time('Mon Jan 01 2001 14:00:00 GMT+0000 (WET)', 'Mon Jan 01 2001 15:30:00 GMT+0000 (WET)');
+/*
+  {
     hours:3,
     minutes:30,
     seconds:0,
@@ -35,9 +36,10 @@ duration.time('1:00AM', '3:30AM');
   }
 */
 
-// Difference in CALENDAR DATES
+// Difference in CALENDAR DATES via pendel.date()
+duration.date('Mon Jan 01 2001 00:00:00 GMT+0000 (WET)', 'Thu, 03 Jan 2002 00:00:00 GMT');
 duration.date('01/01/01', '01/03/02');
-/* 
+/*
   { years: 1,
     months: 12,
     weeks: 52,
@@ -54,7 +56,7 @@ duration.date('01/01/01', '01/03/02');
 
 ### `pendel.time(startTime, endTime)`
 
-Get the time difference between `startTime` and `endTime`
+Get the time difference between `startTime` and `endTime`.
 
 Returns an `object` with the following time properties:
 
@@ -69,16 +71,19 @@ Property | Description
 
 #### startTime
 
-*Required*  
-Type: `string`
+Type: `string`  
+
+A datestring or clocktime string.
 
 
 #### endTime
 
-*Required*  
 Type: `string`
 
-**Note:** `startTime` & `endTime` can be in any of the following 12-hour or 24-hour formats:
+A datestring or clocktime string.
+
+**Note:** `startTime` & `endTime` recognize any of the following formats
+to be 12-hour or 24-hour clocktime string:
 
 12-hour formats: *(space after time optional)*
 
@@ -112,22 +117,18 @@ Property | Description
 
 #### startDate
 
-*Required*  
-Type: `datestring|Date`
+Type: `string` | `Date`
 
-The datestring or `Date` object you want to use as the start date.
+The datestring or Date object you want to use as the start date.
 
 
 #### endDate
 
-*Required*  
-Type: `datestring|Date`
+Type: `string` | `Date`
 
-The datestring or `Date` object you want to use as the end date.
+The datestring or Date object you want to use as the end date.
 
 
 ## License
 
 MIT @ [Michael Wuergler](http://www.numetriclabs.com)
-
-
